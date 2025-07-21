@@ -49,6 +49,8 @@ public class Task1 {
 						} else {
 							System.out.println("You loose all attempts");
 							System.out.println("Correct no is: " + randomNo);
+							attempt.add(at + 1);
+							round.add(rd + 1);
 							break;
 						}
 					} else {
@@ -66,7 +68,7 @@ public class Task1 {
 				} else {
 					System.out.println("Score :-");
 					for (int i = 0; i < round.size(); i++) {
-						System.out.println("Round " + " " + round.get(i) + " in attempt :" + attempt.get(i));
+						System.out.println("Round " + " " + round.get(i) + " Attempt :" + attempt.get(i));
 					}
 				}
 

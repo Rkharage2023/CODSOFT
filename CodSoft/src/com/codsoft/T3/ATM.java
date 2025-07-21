@@ -38,38 +38,15 @@ public class ATM extends BankAccount {
 		while ((choice = menu(sc)) != 0) {
 			switch (choice) {
 			case 1:
-				if (atm.Balance > 0) {
-					System.out.println("Enter Amount to Withdraw");
-					double amt = sc.nextDouble();
-					atm.Balance -= amt;
-					System.out.println("Withdraw Successful");
-					System.out.println("Bank Balance: " + atm.Balance);
-				} else {
-					System.out.println("Balance :0");
-				}
+				atm.withdraw(sc);
 				break;
 
 			case 2:
-				if (atm.Balance <= 5000000) {
-					System.out.println("Enter Amount to Deposit (Amt should be < 50000)");
-					double amt = sc.nextDouble();
-					if (amt <= 50000) {
-						atm.Balance += amt;
-						if (atm.Balance >= 5000000) {
-							System.out.println("You can deposit -" + (5000000 - atm.Balance));
-						}
-
-						System.out.println("Deposit Successful");
-						System.out.println("Bank Balance: " + atm.Balance);
-					} else {
-
-						System.out.println("Amount should be 50000 or less");
-					}
-				} else {
-					System.out.println("Account limit is reached");
-				}
-
+				atm.deposit(sc);
 				break;
+
+			case 3:
+				atm.checkBalance();
 
 			default:
 				break;

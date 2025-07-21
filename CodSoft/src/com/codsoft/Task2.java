@@ -12,8 +12,14 @@ public class Task2 {
 		List<Integer> mark = new ArrayList<>();
 
 		for (int i = 0; i < 5; i++) { // consider fix 5 subject
-			System.out.println("Enter m" + "ark of subject " + (i + 1));
-			mark.add(sc.nextInt());
+			System.out.println("Enter mark of subject " + (i + 1));
+			int ma = sc.nextInt();
+			if (ma >= 0 && ma <= 100) {
+				mark.add(ma);
+			} else {
+				System.out.println("Enter valid mark (1 to 100)");
+				i--;
+			}
 			sum += mark.get(i);
 		}
 		double avg_per = ((double) sum / 500) * 100;
